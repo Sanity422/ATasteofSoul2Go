@@ -46,3 +46,13 @@ function nextSlide(){
     slideIndex++;
     showSlide(slideIndex);
 }
+
+// Menu drop-down
+
+let dropDown = document.querySelector(".menu-card button");
+let menuNavbar = document.querySelector(".menu-navbar");
+
+dropDown.onclick = () => {
+    dropDown.classList.toggle("bx-chevron-down");
+    menuNavbar.classList.toggle('active');
+}
