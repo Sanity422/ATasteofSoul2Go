@@ -122,17 +122,17 @@
         </section>
 
         <section class="menu" id="menu">
-
-          <nav class="menu-navbar">
-            <a href="#Salads">Salads & Sides</a>
-            <a href="#Entrees">Entrées</a>
-            <a href="#Desserts">Desserts</a>
-          </nav>
-
           <h1>Our Menu</h1>
           <div class="menu-content">
             <div class="menu-card" id="Salads">
-              <h2>Salads & Sides<button>&#10095</button></h2>
+              <div class="menu-dropdown">
+                <button class="dp">Salads & Sides <span class="arrow">></span></button>
+                <div class="dropdown-content">
+                  <a href="#Salads">Salads & Sides</a>
+                  <a href="#Entrees">Entrées</a>
+                  <a href="#Desserts">Desserts</a>
+                </div>
+              </div>
               <div class="menu-item">
                 <img src="images/salad2.jpeg" alt="chicken salad">
                 <h3>Chicken Salad</h3>
@@ -189,7 +189,14 @@
             </div>
 
             <div class="menu-card" id="Entrees">
-              <h2>Main Entrées</h2>
+              <div class="menu-dropdown">
+                <button class="dp">Main Entrées <span class="arrow">></span></button>
+                <div class="dropdown-content">
+                  <a href="#Salads">Salads & Sides</a>
+                  <a href="#Entrees">Entrées</a>
+                  <a href="#Desserts">Desserts</a>
+                </div>
+              </div>
               <div class="menu-item">
                 <img src="images/ShrimpPastsa.jpeg" alt="shrimp pasta">
                 <h3>Creamy Shrimp pasta</h3>
@@ -320,7 +327,14 @@
             </div>
 
             <div class="menu-card" id="Desserts">
-              <h2>Desserts</h2>
+              <div class="menu-dropdown">
+                <button class="dp">Desserts <span class="arrow">></span></button>
+                <div class="dropdown-content">
+                  <a href="#Salads">Salads & Sides</a>
+                  <a href="#Entrees">Entrées</a>
+                  <a href="#Desserts">Desserts</a>
+                </div>
+              </div>
               <div class="menu-item">
                 <img src="images/StrawPoundCake.jpg" alt="Strawberry poundcake">
                 <h3>Strawberry Lemon Glazed Poundcake</h3>

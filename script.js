@@ -47,12 +47,20 @@ function nextSlide(){
     showSlide(slideIndex);
 }
 
-// Menu drop-down
+// Menu drop-down box
 
-let dropDown = document.querySelector(".menu-card button");
-let menuNavbar = document.querySelector(".menu-navbar");
+let dropDown = document.querySelector(".menu-dropdown button");
+let menuNavbar = document.querySelector(".dropdown-content");
+let arrow = document.querySelector(".dp .arrow");
 
 dropDown.onclick = () => {
-    dropDown.classList.toggle("bx-chevron-down");
     menuNavbar.classList.toggle('active');
+    
+    if(arrow.textContent === ">"){
+        arrow.textContent = "˅";
+    }
+    else {
+        arrow.textContent = ">";
+
+    }
 }
