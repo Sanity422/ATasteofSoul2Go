@@ -8,6 +8,29 @@ menuIcon.onclick = () => {
     navbar.classList.toggle('active');
 }
 
+// TRACK SHOPPING CART
+function addToCart(item) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+  const index = cart.findIndex(i => i.id === item.id);
+  if (index !== -1) {
+    cart[index].quantity += 1;
+  } else {
+    cart.push({ ...item, quantity: 1 });
+  }
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
+}
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  document.getElementById("cart-count").textContent = count;
+}
+
+document.addEventListener("DOMContentLoaded", updateCartCount);
+
 // IMG SLIDER
 const slides = document.querySelectorAll(".slides img");
 let slideIndex = 0;

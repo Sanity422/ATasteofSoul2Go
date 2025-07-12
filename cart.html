@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="logo">
+        <span>A Taste Of Soul 2 Go</span><img src="images/AToS2G_img.jpg" alt="logo">
+    <h1>
+    </header>
+  <section class="cart">
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <h3>Total: $<span id="cart-total">0.00</span></h3>
+    <a href="checkout.html">Proceed to Checkout</a>
+  </section>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById("cart-items");
+    let total = 0;
+
+    cart.forEach(item => {
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+
+      const div = document.createElement("div");
+      div.className = "cart-item";
+      div.innerHTML = `
+        <strong>${item.name}</strong><br>
+        $${item.price.toFixed(2)} x ${item.quantity} = $${itemTotal.toFixed(2)}
+      `;
+      cartItemsContainer.appendChild(div);
+    });
+
+    document.getElementById("cart-total").textContent = total.toFixed(2);
+  </script>
+</body>
+</html>

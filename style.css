@@ -15,6 +15,7 @@
 html {
   font-size: 60%;
   overflow-x: hidden;
+  overscroll-behavior: none;
 }
 body {
   background: white;
@@ -80,13 +81,38 @@ body {
   font-size: 3rem;
   margin: 3rem 0;
   color: white;
+  transition: 0.3s ease-in;
 }
 .navbar a:hover{
-  border-bottom: 2px solid red;
+  text-decoration: underline;
+  transition: 0.1 ease;
+  color: red;
 }
 .navbar.active {
   display: block;
 }
+
+.cart-button {
+  position: fixed;
+  font-size: 4rem;
+  bottom: 20px;
+  left: 20px;
+  background-color: red;
+  color: white;
+  padding: 12px 16px;
+  border: 2px solid black;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+.cart-button:hover {
+  background-color: black;
+  border: 2px solid red;
+  transition: 0.3s ease;
+}
+
 section {
   min-height: 100vh;
   padding: 15rem;
@@ -133,6 +159,7 @@ section {
 }
 .btn:hover {
   background: red;
+  transition: ease-in;
 }
 .order-button {
   text-align: center;
@@ -410,36 +437,97 @@ img.displaySlide {
   border-radius: 50%;
   border: 2px solid black;
 }
-.menu-content img:hover {
-  transform: scale(1.1);
-}
 
+/*FIX THE SPACING*/
 .menu-item h3 {
-  width: 100%;
   margin-bottom: 200px;
-  text-align: center;
-  text-wrap: balance;
-  font-size: 4rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  text-align: left;
+  text-wrap: nowrap;
+  font-size: 3rem;
   color: red;  
+  border-bottom: 2px solid red;
 }
 .menu-item p {
   width: 100%;
-  margin-bottom: 20px;
-  margin-left: -310px;
+  padding-top: 1rem;
+  margin-left: -400px;
   font-size: 2rem;
+  text-align: left;
   color: black;
 }
 .menu-item h5 {
   margin-bottom: 300px;
   margin-left: 500px;
   font-size: 4rem;
+  padding: 1rem 1rem;
+  border: 1px solid red;
 }
 .menu-btn {
-  margin-left: -160px;
+  margin-left: -180px;
+  margin-top: 150px;
   font-size: 5rem;
   color: red;
   background-color: black;
   border: 2px solid red;
   letter-spacing: 1px;
   padding: 1rem 5rem;
+}
+
+.footer {
+  background-color: black;
+  padding: 40px 0;
+}
+.footer content {
+  width: 100%;
+  padding: 5rem 5rem;
+  display: grid;
+}
+.footer .social-icons {
+  padding-bottom: 1rem;
+  margin-left: 460px;
+}
+.footer h2{
+  margin-left: 200px;
+  font-size: 2rem;
+  color: white;
+}
+.footer h3{
+  padding: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+}
+.footer h4{
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 2rem;
+  color: white;
+}
+.footer p{
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+}
+.copyright {
+  padding: 2rem;
+}
+.credits {
+  padding: 2rem;
+  border-bottom: 2px solid red;
+}
+
+.cart {
+  padding: 20rem 10rem;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
 }
